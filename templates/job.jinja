@@ -1,0 +1,138 @@
+{% extends "base.jinja" %}
+{% block title %}Job{% endblock %}
+{% block head %}
+<link href="{{ url_for('static', filename='style/job.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+	<div class="row py-2 rounded text-dark ml-0 px-2 bg-white" id="filter-sidebar">
+		<h5 class="w-100 mb-0"><i class="fab fa-apple"></i> Apple Inc.</h5>
+		<div class="mx-2 mb-2">
+			{% for count in range(5) %}
+				<span class="text-warning">
+					{% if count < 4 %}
+						&starf;
+					{% else %}
+						&star;
+					{% endif %}
+				</span>
+			{% endfor %}
+		</div>
+		<span class="text-muted font-size-small">Cupertino, California</span>
+		<span class="font-size-small text-success">51 people got selected in the past 1 year</span>
+
+
+		<h5 class="w-100 mt-5">Overview</h5>
+		{% for title in ["Skills and Requirements", "Job Details", "Role at the company", "More Info"] %}
+			<div class="w-100">
+				<span class="btn btn-sm btn-block btn-light text-left mb-2">{{ title }}</span>
+			</div>
+		{% endfor %}
+	</div>
+	<div class="row py-2 rounded text-dark px-2 bg-white mr-1" id="filter-sidebar-right">
+		<h5 class="w-100"><i class="fas fa-user fa-sm"></i> Ritesh Thakur</h5>
+		<span class="text-muted font-size-small">BTech (EnTC)</span>
+		
+		<span class="btn btn-sm btn-warning text-left my-2 ">View Resume</span>
+
+		<h5 class="w-100 mt-5">Your Skills</h5>
+		{% for skill, required in [("HTML", 1), ("CSS", 1), ("React/ReactJS", 1), ("1 yr Experience", 0), ("JS", 0), ("MERN Stack", 0), ("Java", 0)] %}
+			<div class="w-100">
+				<span class="btn btn-sm btn-block 
+				{% if required %}
+					btn-success
+				{% else %}
+					btn-light
+				{% endif %} text-left mb-2">{{ skill }}</span>
+			</div>
+		{% endfor %}
+	</div>
+
+	<div class="container mt-4">
+		<div class="row mx-0">
+			<span class="h3 col px-0 font-titillium">
+				Software Internship
+			</span>
+			<span class="text-right col-auto btn btn-primary font-titillium" style="align-items:center;"><span class="align-middle">Apply</span></span>
+		</div>
+		<!-- Skills and Requirements -->
+		<div class="mx-0 mt-2 my-4 px-1">
+			<div class="h4 mb-1 font-titillium text-primary">Skills and Requirements</div>
+			<div class="row py-1 my-2">
+				{% for skill, icon, completed in [ ("HTML", "fab fa-html5", 1), ("CSS", "fab fa-css3-alt", 1), ("Bootstrap", "fab fa-bootstrap", 0), ("React/ReactJS", "fab fa-react", 1), ("Experience (2-3 yrs)", "fas fa-user-tie", 0), ("BTech / BE / MCA (Comp. Science)", "fas fa-graduation-cap", 0)] %}
+				<div class="col-lg-auto col-auto my-2 h6 mx-auto text-center
+					{% if completed %}
+						text-success
+					{% else %}
+						text-primary
+					{% endif %} "
+				>
+					<i class="{{ icon }} fa-lg align-middle"></i>
+					<span class="align-middle 
+						{% if not completed %}
+							text-dark
+						{% endif %} "
+					>{{ skill }}</span>
+					{% if completed %}
+						&check;
+					{% endif %} 
+				</div>
+				{% endfor %}
+			</div>
+			<!-- <div class="row py-1 my-2">
+				{% for skill, icon in [("20,000 / month", "fas fa-rupee-sign"), ("Full-time", "fas fa-clock"), ("Pune, India", "fas fa-map-marker-alt")] %}
+				<div class="col-lg-4 col-12 text-center my-2 h5"><i class="{{ icon }} fa-lg text-warning"></i>&nbsp; {{ skill }}</div>
+				{% endfor %}
+			</div> -->
+		</div>
+
+		<!-- About -->
+		<div class="mx-2 mt-4">
+			<div class="h5 mb-1 font-titillium">About</div>
+			<div class="section">
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam praesentium ipsa ducimus eos quam temporibus vero cum vel architecto, ad itaque eius molestiae aliquid maxime distinctio voluptatum totam soluta quos?
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis rem sed, corporis deleniti praesentium ipsam molestiae in nam accusamus doloremque. In alias eveniet voluptate repudiandae possimus optio reiciendis qui autem.
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo ab autem voluptatibus ut at omnis mollitia officia animi, reprehenderit, exercitationem neque facilis aliquam assumenda perspiciatis possimus labore, laborum quae repudiandae?
+			</div>
+		</div>
+		
+		<div class="mx-2 shadow pt-3 pb-1 my-5">
+			<div class="h4 mb-1 text-center mt-2 font-titillium">Job Details</div>
+			<div class="row py-1 my-2">
+				{% for skill, icon, info in [("20,000", "fas fa-rupee-sign", "Salary (per month)"), ("Full-time", "fas fa-clock", "Flexible work-hours"), ("Pune, India", "fas fa-map-marker-alt", "More Info")] %}
+				<div class="col-lg-4 col-12 text-center my-3">
+					<div class="h5 mb-0 font-titillium"><i class="{{ icon }} text-warning"></i>&nbsp; {{ skill }}</div>
+					<span class="text-muted">{{ info }}</span>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		
+		<div class="mx-2 mt-4">
+			<div class="h5 mb-1 font-titillium">Role at the company</div>
+			<div class="section">
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam praesentium ipsa ducimus eos quam temporibus vero cum vel architecto, ad itaque eius molestiae aliquid maxime distinctio voluptatum totam soluta quos?
+				<ol class="mb-2">
+					<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat expedita.</li>
+					<li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea voluptas enim officia.</li>
+				</ol>
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis rem sed, corporis deleniti praesentium ipsam molestiae in nam accusamus doloremque. In alias eveniet voluptate repudiandae possimus optio reiciendis qui autem.
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis rem sed, corporis deleniti praesentium ipsam molestiae in nam accusamus doloremque. In alias eveniet voluptate repudiandae possimus optio reiciendis qui autem.
+			</div>
+		</div>
+		<!-- Information regarding Pune, India -->
+		<div class="mx-2 shadow pt-3 my-5">
+			<div class="h4 mb-1 text-center mt-2 font-titillium">Information about Pune, India</div>
+			<div class="row">
+				{% for num, rating in [("14th", "India Safety Index"), ("₹24,436.38", "1-Person Living Cost"), ("₹16,213.24", "1-BHK Rent")] %}
+				<div class="col-lg text-center my-3">
+					<div class="h4 mb-0 font-titillium">{{ num }}</div>
+					<span class="text-muted">{{ rating }}</span>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+.font-size-small {
+	font-size: small;
+}
+
+#filter-sidebar {
+	margin-top: 7.5rem;
+	width: 10%;
+	float: left;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 5%;
+	height: initial;
+}
+
+#filter-sidebar-right {
+	margin-top: 7.5rem;
+	width: 10%;
+	float: right;
+	position: sticky;
+	position: -webkit-sticky;
+	top: 5%;
+	height: initial;
+}
+
+#search-results {
+	margin-left: 10%;
+}
+
+@media screen and (max-width: 1200px) {
+	#filter-sidebar {
+		display: none;
+	}
+	#filter-sidebar-right {
+		display: none;
+	}
+
+	#search-results {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

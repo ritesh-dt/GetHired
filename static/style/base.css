@@ -1,0 +1,59 @@
+:root {
+	--color-red: #e9503b;
+}
+
+@font-face {
+	font-family: Dosis;
+	src: url(https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&display=swap)
+}
+
+@font-face {
+	font-family: Titillium Web;
+	src : url(https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap);
+}
+
+.font-dosis {
+	font-family: Dosis, sans-serif;
+}
+
+.font-titillium-normal {
+	font-family: Titillium Web, sans-serif;
+	font-weight: 600;
+}
+.font-titillium {
+	font-family: Titillium Web, sans-serif;
+	font-weight: 600;
+}
+
+
+.bg-red {
+	background-color: var(--color-red);
+}
+.text-red {
+	color: var(--color-red);
+}
+
+.bg-black {
+	background-color: #1f2327;
+}
+
+/* .navbar {
+	position: sticky !important;
+	position: -webkit-sticky !important;
+	top: 0 !important;
+	z-index: 100;
+} */
+
+#navbar-search {
+	width: 85%;
+	border-right-width: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+#navbar-search-button {
+	width: 15%;
+	/* border-radius: 0rem, 0.25rem, 0.25rem, 0rem; */
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
