@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/Users/Ritesh/Desktop/Python/Job Portal/venv/bin/python3" "$0" "$@"
+'''exec' "/Users/Ritesh/Desktop/Python/Flask-Bootstrap Websites/GetHired/venv/bin/python3" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
