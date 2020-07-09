@@ -13,4 +13,4 @@ def job():
 	return render_template("job.jinja")
 
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run()
